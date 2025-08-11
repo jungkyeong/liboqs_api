@@ -15,5 +15,3 @@ std::string resp_msg;
 #define JSON_LIB "./lib/json/libjsoncpp.so"
 #define CONFIG_ROOT "./cfg/config.txt"
 #define SEC_CONFIG_ROOT "./cfg/secret_config.txt"
-
-

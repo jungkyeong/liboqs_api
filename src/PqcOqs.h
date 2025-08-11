@@ -55,7 +55,7 @@ public:
      * @param public_key public key
      * @param alg_type algorithm type
      * @param ciphertext_max_buf Ciphertext buffer max length
-     * @param shared_secret_e_max_buf shared_secret_e buffer max length
+     * @param shared_secret_max_buf shared_secret_e buffer max length
      * @param public_key_max_buf Public key buffer max length
      * @return Success 0, Fail -1
      */      
@@ -68,7 +68,7 @@ public:
      * @param ciphertext KEM capsulate data
      * @param private_key Private key buffer
      * @param alg_type algorithm type
-     * @param shared_secret_e_max_buf shared_secret_e buffer max length
+     * @param shared_secret_max_buf shared_secret_e buffer max length
      * @param ciphertext_max_buf Ciphertext buffer max length
      * @param private_key_max_buf Private key buffer max length
      * @return Success 0, Fail -1
@@ -111,11 +111,6 @@ public:
      * @return Success 0 Fail -1
      */    
     int mldsa_verify(const uint8_t *signature, size_t signature_len, const uint8_t *message, size_t message_len, int alg_type, const uint8_t *public_key, int public_key_max_buf);
-
-
-    
-
-
 
 };
 

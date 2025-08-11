@@ -86,33 +86,33 @@ int PqcOqs::kem_create_keypair(uint8_t *public_key, uint8_t *private_key, int al
  * @param public_key public key
  * @param alg_type algorithm type
  * @param ciphertext_max_buf Ciphertext buffer max length
- * @param shared_secret_e_max_buf shared_secret_e buffer max length
+ * @param shared_secret_max_buf shared_secret_e buffer max length
  * @param public_key_max_buf Public key buffer max length
  * @return Success 0, Fail -1
  */    
 int PqcOqs::kem_encapsulate(uint8_t *ciphertext, uint8_t *shared_secret_e, const uint8_t *public_key, int alg_type,
-    int ciphertext_max_buf, int shared_secret_e_max_buf, int public_key_max_buf){
+    int ciphertext_max_buf, int shared_secret_max_buf, int public_key_max_buf){
 
     DBG_PRINT("KEM KEY Encapsulate \n");
 
     // Buffer length check
     if(alg_type == KEM_512){
         if(public_key_max_buf < OQS_KEM_ml_kem_512_length_public_key || ciphertext_max_buf < OQS_KEM_ml_kem_512_length_ciphertext
-        || shared_secret_e_max_buf < OQS_KEM_ml_kem_768_length_shared_secret){
+        || shared_secret_max_buf < OQS_KEM_ml_kem_768_length_shared_secret){
             DBG_PRINT("Key Buffer not enough \n");
             return FAIL;
         }
     }
     else if(alg_type == KEM_768){
         if(public_key_max_buf < OQS_KEM_ml_kem_768_length_public_key || ciphertext_max_buf < OQS_KEM_ml_kem_768_length_ciphertext
-        || shared_secret_e_max_buf < OQS_KEM_ml_kem_768_length_shared_secret){
+        || shared_secret_max_buf < OQS_KEM_ml_kem_768_length_shared_secret){
             DBG_PRINT("Key Buffer not enough \n");
             return FAIL;
         }
     }
     else if(alg_type == KEM_1024){
         if(public_key_max_buf < OQS_KEM_ml_kem_1024_length_public_key || ciphertext_max_buf < OQS_KEM_ml_kem_1024_length_ciphertext
-        || shared_secret_e_max_buf < OQS_KEM_ml_kem_1024_length_shared_secret){
+        || shared_secret_max_buf < OQS_KEM_ml_kem_1024_length_shared_secret){
             DBG_PRINT("Key Buffer not enough \n");
             return FAIL;
         }
